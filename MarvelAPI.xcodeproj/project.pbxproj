@@ -15,6 +15,7 @@
 		9D548E1926E2A56000407219 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D548E1726E2A56000407219 /* LaunchScreen.storyboard */; };
 		9D548E2426E2A56000407219 /* MarvelAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D548E2326E2A56000407219 /* MarvelAPITests.swift */; };
 		9D548E2F26E2A56000407219 /* MarvelAPIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D548E2E26E2A56000407219 /* MarvelAPIUITests.swift */; };
+		9D548E4426E2AA2A00407219 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D548E4326E2AA2A00407219 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		9D548E2A26E2A56000407219 /* MarvelAPIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelAPIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D548E2E26E2A56000407219 /* MarvelAPIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelAPIUITests.swift; sourceTree = "<group>"; };
 		9D548E3026E2A56000407219 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D548E4326E2AA2A00407219 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,8 @@
 		9D548E0B26E2A55E00407219 /* MarvelAPI */ = {
 			isa = PBXGroup;
 			children = (
+				9D548E4026E2A9E100407219 /* Scene */,
+				9D548E3F26E2A9D700407219 /* Repository */,
 				9D548E0C26E2A55E00407219 /* AppDelegate.swift */,
 				9D548E0E26E2A55E00407219 /* SceneDelegate.swift */,
 				9D548E1026E2A55E00407219 /* ViewController.swift */,
@@ -126,6 +130,37 @@
 				9D548E3026E2A56000407219 /* Info.plist */,
 			);
 			path = MarvelAPIUITests;
+			sourceTree = "<group>";
+		};
+		9D548E3F26E2A9D700407219 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		9D548E4026E2A9E100407219 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				9D548E4226E2AA0100407219 /* Home */,
+				9D548E4126E2A9F700407219 /* Model */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		9D548E4126E2A9F700407219 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9D548E4226E2AA0100407219 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				9D548E4326E2AA2A00407219 /* HomeViewController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +296,7 @@
 				9D548E1126E2A55E00407219 /* ViewController.swift in Sources */,
 				9D548E0D26E2A55E00407219 /* AppDelegate.swift in Sources */,
 				9D548E0F26E2A55E00407219 /* SceneDelegate.swift in Sources */,
+				9D548E4426E2AA2A00407219 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
