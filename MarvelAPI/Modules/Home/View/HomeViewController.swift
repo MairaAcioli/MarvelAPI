@@ -11,6 +11,7 @@ import UIKit
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     weak var presenter: HomeViewToPresenterProtocol?
+    var characterModel: CharactersResponseModel? = nil
 //    private var refreshControl: UIRefreshControl?
     
     //MARK: - Sets the StatusBar as white
@@ -63,10 +64,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     func configurator() {
-//        
+//
 //        let viewController = HomeViewController()
 //        let presenter: HomeViewToPresenterProtocol & HomeInteractorToPresenterProtocol = HomePresenter()
-//        
+//
 //        viewController.presenter = presenter
 //        viewController.presenter?.router = HomeRouter()
 //        viewController.presenter?.view = viewController
@@ -94,8 +95,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-//        return characterModel.count
-        return 5
+//        return characterModel?.data?.results?.count ?? 0
+        return 18
         
     }
     
@@ -103,6 +104,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: indexPath) as! HomeTableViewCell
         cell.imageCharacters.image = UIImage(named: "marvelTestImage")
+        
+        cell.nameCharactersLabel.text = characterModel?.data?.results?[indexPath.row].name
+        
 //        cell.nameLabel.text =
 //        for i in characterModel {
 //            cell.update(model: i)
@@ -129,8 +133,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
 extension HomeViewController: HomePresenterToViewProtocol {
     
+   
+    
     func showCharacterResults(model: CharactersResponseModel) {
-//        self.characterModel = model
+        self.characterModel = model
     }
     
     

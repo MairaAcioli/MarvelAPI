@@ -12,12 +12,12 @@ class HomeTableViewCell: UITableViewCell {
     
     lazy var view: UIView = {
         let view = UIView()
-        view.layer.cornerRadius  = 10
-        view.backgroundColor     = UIColor.orange
+        view.layer.cornerRadius  = 5
+        view.backgroundColor     = UIColor.systemPink
         view.layer.shadowColor   = UIColor.black.cgColor
-        view.layer.shadowOpacity = 1
+        view.layer.shadowOpacity = 2
         view.layer.shadowOffset  = CGSize.zero
-        view.layer.shadowRadius  = 3
+        view.layer.shadowRadius  = 1
         view.clipsToBounds = true
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -28,7 +28,7 @@ class HomeTableViewCell: UITableViewCell {
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius  = 10
-        imageView.backgroundColor     = UIColor.orange
+//        imageView.backgroundColor     = UIColor.orange
         imageView.layer.shadowColor   = UIColor.black.cgColor
         imageView.layer.shadowOpacity = 1
         imageView.layer.shadowOffset  = CGSize.zero
@@ -41,11 +41,11 @@ class HomeTableViewCell: UITableViewCell {
     
     lazy var nameCharactersLabel: UILabel = {
         let label = UILabel()
-        label.numberOfLines = 0
-        label.font = UIFont.boldSystemFont(ofSize: 20)
-        label.text = "teste personagem marvel"
-        label.tintColor = .purple
+        label.font = UIFont.boldSystemFont(ofSize: 18)
+//        label.text = "teste personagem marvel"
+        label.tintColor = .cyan
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
         return label
     }()
     
@@ -78,10 +78,10 @@ class HomeTableViewCell: UITableViewCell {
         
         
         
-        
-        let screenSize = UIScreen.main.bounds
-        let width = screenSize.width
-        let height = screenSize.height*0.2
+//
+//        let screenSize = UIScreen.main.bounds
+//        let width = screenSize.width
+//        let height = screenSize.height*0.2
 //        20% da tela *0.2
 
 //        self.imageCharacters = UIImageView(frame: CGRect(x: width*0.05, y: width*0.05, width: height*0.6, height: height*0.9))
@@ -93,10 +93,23 @@ class HomeTableViewCell: UITableViewCell {
 //        self.nameLabel.center.y = height/2
 ////
        
-//        self.addSubview(view)
-//        view.addSubview(stack)
-        self.addSubview(view)
-        view.addSubview(stack)
+        self.contentView.addSubview(imageCharacters)
+        view.addSubview(nameCharactersLabel)
+        self.contentView.addSubview(view)
+        
+        imageCharacters.centerYAnchor.constraint(equalTo:self.contentView.centerYAnchor).isActive = true
+        imageCharacters.leadingAnchor.constraint(equalTo:self.contentView.leadingAnchor, constant:10).isActive = true
+        imageCharacters.widthAnchor.constraint(equalToConstant:70).isActive = true
+        imageCharacters.heightAnchor.constraint(equalToConstant:70).isActive = true
+        
+        view.centerYAnchor.constraint(equalTo:self.contentView.centerYAnchor).isActive = true
+        view.leadingAnchor.constraint(equalTo:self.imageCharacters.trailingAnchor, constant:10).isActive = true
+        view.trailingAnchor.constraint(equalTo:self.view.trailingAnchor, constant:-10).isActive = true
+        view.heightAnchor.constraint(equalToConstant:40).isActive = true
+        
+        nameCharactersLabel.topAnchor.constraint(equalTo:self.view.topAnchor).isActive = true
+        nameCharactersLabel.leadingAnchor.constraint(equalTo:self.view.leadingAnchor).isActive = true
+        nameCharactersLabel.trailingAnchor.constraint(equalTo:self.view.trailingAnchor).isActive = true
     }
     
     required init?(coder: NSCoder) {
