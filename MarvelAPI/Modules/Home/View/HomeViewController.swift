@@ -18,24 +18,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         return UIStatusBarStyle.lightContent
     }
-    
-    init(presenter: HomeViewToPresenterProtocol) {
-        self.presenter = presenter
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
+        
     var charactersListTableView = UITableView()
-//    var characterModel: CharactersResponseModel
-//    var interactor: BusinessLogic?
     
 //    apenas teste request
     var repository = CharactersRepository()
 
-//    var arrayTeste = [MarvelModel(name: "teste1", image: UIImage(named: "teste1")!), MarvelModel(name: "teste1", image: UIImage(named: "teste1")!), MarvelModel(name: "teste2", image: UIImage(named: "teste2")!), MarvelModel(name: "teste2", image: UIImage(named: "teste2")!)]
         
     let cell = HomeTableViewCell.init()
 
@@ -75,10 +63,19 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     func configurator() {
-        let presenter = HomePresenter()
-        let viewController = HomeViewController(presenter: presenter)
-        _ = HomeInteractor(presenter: presenter, repository: CharactersRepository())
-        viewController.presenter = presenter
+//        
+//        let viewController = HomeViewController()
+//        let presenter: HomeViewToPresenterProtocol & HomeInteractorToPresenterProtocol = HomePresenter()
+//        
+//        viewController.presenter = presenter
+//        viewController.presenter?.router = HomeRouter()
+//        viewController.presenter?.view = viewController
+//        viewController.presenter?.interactor = HomeInteractor()
+//        viewController.presenter?.interactor?.presenter = presenter
+//        let presenter = HomePresenter()
+//        let viewController = HomeViewController(presenter: presenter)
+//        _ = HomeInteractor(presenter: presenter, repository: CharactersRepository())
+//        viewController.presenter = presenter
     }
     
     func setupConstraints() {
@@ -105,6 +102,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: indexPath) as! HomeTableViewCell
+        cell.imageCharacters.image = UIImage(named: "marvelTestImage")
 //        cell.nameLabel.text =
 //        for i in characterModel {
 //            cell.update(model: i)

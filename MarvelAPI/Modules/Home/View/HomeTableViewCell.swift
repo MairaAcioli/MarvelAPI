@@ -8,11 +8,7 @@
 import UIKit
 
 class HomeTableViewCell: UITableViewCell {
-    
-    var nameLabel: UILabel!
-    
-    
-//    var imageCharacters: UIImageView!
+
     
     lazy var view: UIView = {
         let view = UIView()
@@ -61,27 +57,7 @@ class HomeTableViewCell: UITableViewCell {
         return stack
     }()
     
-//    class Model {
-//
-//        var code: Int?
-//        var status, copyright, attributionText, attributionHTML: String?
-//        var etag: String?
-//        var data: DataClass?
-//    }
-//
-//    var model: Model? {
-//        didSet {
-//         update()
-//        }
-//    }
-//
-//    //teste objeto
-//    func update() {
-//        guard let model = model else {return}
-//        nameLabel.text = model.copyright
-//
-//    }
-    
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -108,18 +84,19 @@ class HomeTableViewCell: UITableViewCell {
         let height = screenSize.height*0.2
 //        20% da tela *0.2
 
-        self.imageCharacters = UIImageView(frame: CGRect(x: width*0.05, y: width*0.05, width: height*0.6, height: height*0.9))
-        self.imageCharacters.center.y = height/2
-        
-        self.imageCharacters.contentMode = .scaleToFill
-        
-        self.nameLabel = UILabel(frame: CGRect(x: width*0.7, y: 0, width: width*0.3, height: height/2))
-        self.nameLabel.center.y = height/2
+//        self.imageCharacters = UIImageView(frame: CGRect(x: width*0.05, y: width*0.05, width: height*0.6, height: height*0.9))
+//        self.imageCharacters.center.y = height/2
 //
+//        self.imageCharacters.contentMode = .scaleToFill
+//
+//        self.nameLabel = UILabel(frame: CGRect(x: width*0.7, y: 0, width: width*0.3, height: height/2))
+//        self.nameLabel.center.y = height/2
+////
        
 //        self.addSubview(view)
 //        view.addSubview(stack)
-        self.addSubview(stack)
+        self.addSubview(view)
+        view.addSubview(stack)
     }
     
     required init?(coder: NSCoder) {

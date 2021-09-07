@@ -40,6 +40,8 @@ protocol HomePresenterToViewProtocol: class {
 
 protocol HomePresenterToRouterProtocol: class {
 //    static var mainstoryboard: UIStoryboard { get }
-    static func createModule(as presentationStyle: UIModalPresentationStyle) -> UIViewController
+//    static func createModule(as presentationStyle: UIModalPresentationStyle) -> UIViewController
 //    func goToMovieDetailsViewController(movie: Movie, for view: UIViewController)
+    
+    static func createModule() -> UIViewController
 }

@@ -11,11 +11,11 @@ import ObjectMapper
 
 typealias CharactersResponseCompletionResult = ((Result<CharactersResponse, NSError>) -> Void)
 
-protocol CharactersRepositoryProtocol {
-    func getCharacters(completion: @escaping CharactersResponseCompletionResult)
-}
+//protocol CharactersRepositoryProtocol {
+//    func getCharacters(completion: @escaping CharactersResponseCompletionResult)
+//}
 
-class CharactersRepository: CharactersRepositoryProtocol {
+class CharactersRepository {
     
     let request = CharactersRequest()
     static let shared = CharactersRequest()

@@ -18,11 +18,6 @@ class HomePresenter: HomeViewToPresenterProtocol {
     ///Local Data Arrays
     private var charactersModel = CharactersResponseModel()
     
-//    func getCharacters(model:CharactersResponseModel) {
-//        guard let data = model.data else {return}
-//        let result = data.results
-//
-//    }
     
     func requestFirstCallOfCharacters() {
         

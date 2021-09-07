@@ -9,18 +9,14 @@ import Foundation
 
 class HomeInteractor: HomePresenterToInteractorProtocol {
     
-    let repository: CharactersRepositoryProtocol?
+    
     var presenter: HomeInteractorToPresenterProtocol?
-    
-    init(presenter: HomeInteractorToPresenterProtocol, repository: CharactersRepositoryProtocol) {
-        self.presenter = presenter
-        self.repository = repository
-    }
-    
     
     func fetchCharacters() {
         
-        repository?.getCharacters(completion: { (result) in
+        let repository = CharactersRepository()
+        
+        repository.getCharacters(completion: { (result) in
             
             switch result {
             
