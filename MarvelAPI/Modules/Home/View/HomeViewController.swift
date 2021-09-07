@@ -2,22 +2,35 @@
 //  HomeViewController.swift
 //  MarvelAPI
 //
-//  Created by Maira Preto Acioli de Siqueira on 03/09/21.
+//  Created by Maira Preto Acioli de Siqueira on 07/09/21.
 //
 
 import UIKit
 
-protocol DisplayLogic {
-    func presentCharacters(model: [CharactersResponseModel])
-}
 
-class HomeViewController: UIViewController, DisplayLogic, UITableViewDelegate, UITableViewDataSource {
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    weak var presenter: HomeViewToPresenterProtocol?
+//    private var refreshControl: UIRefreshControl?
+    
+    //MARK: - Sets the StatusBar as white
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        
+        return UIStatusBarStyle.lightContent
+    }
+    
+    init(presenter: HomeViewToPresenterProtocol) {
+        self.presenter = presenter
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     var charactersListTableView = UITableView()
-    
-    var characterModel: [CharactersResponseModel] = []
-    var interactor: BusinessLogic?
+//    var characterModel: CharactersResponseModel
+//    var interactor: BusinessLogic?
     
 //    apenas teste request
     var repository = CharactersRepository()
@@ -30,14 +43,15 @@ class HomeViewController: UIViewController, DisplayLogic, UITableViewDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        repository.getCharacters { [weak self] array in
-            if array != nil {
-
-            }
-        }
-        configurator()
+//        repository.getCharacters { [weak self] array in
+//            if array != nil {
+//
+//            }
+//        }
         
-        interactor?.fetchCharacters()
+        presenter?.requestFirstCallOfCharacters()
+        
+        configurator()
         
         setupNavigationBar()
         setupConstraints()
@@ -46,27 +60,25 @@ class HomeViewController: UIViewController, DisplayLogic, UITableViewDelegate, U
         
         self.charactersListTableView.delegate = self
         self.charactersListTableView.dataSource = self
-        
         self.charactersListTableView.register(HomeTableViewCell.self, forCellReuseIdentifier: "HomeTableViewCell")
      
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        configurator()
-//        interactor?.fetchCharacters()
+
     }
     
-    func presentCharacters(model: [CharactersResponseModel])  {
-        self.characterModel = model
-    }
+//    func presentCharacters(model: [CharactersResponseModel])  {
+//        self.characterModel = model
+//    }
     
     
     func configurator() {
-        let viewController = HomeViewController()
-        let presenter = HomePresenter(viewController: viewController)
-        let interactor = HomeInteractor(presenter: presenter, repository: CharactersRepository())
-        viewController.interactor = interactor 
+        let presenter = HomePresenter()
+        let viewController = HomeViewController(presenter: presenter)
+        _ = HomeInteractor(presenter: presenter, repository: CharactersRepository())
+        viewController.presenter = presenter
     }
     
     func setupConstraints() {
@@ -108,7 +120,7 @@ class HomeViewController: UIViewController, DisplayLogic, UITableViewDelegate, U
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        interactor?.fetchCharacters()
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -117,3 +129,17 @@ class HomeViewController: UIViewController, DisplayLogic, UITableViewDelegate, U
     
 }
 
+extension HomeViewController: HomePresenterToViewProtocol {
+    
+    func showCharacterResults(model: CharactersResponseModel) {
+//        self.characterModel = model
+    }
+    
+    
+//    func problemOnFetchingData(error: errorTypes) {
+//
+//        ///Show Alert with problem
+//
+//    }
+    
+}

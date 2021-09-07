@@ -2,7 +2,7 @@
 //  HomeTableViewCell.swift
 //  MarvelAPI
 //
-//  Created by Maira Preto Acioli de Siqueira on 03/09/21.
+//  Created by Maira Preto Acioli de Siqueira on 07/09/21.
 //
 
 import UIKit
@@ -22,12 +22,15 @@ class HomeTableViewCell: UITableViewCell {
         view.layer.shadowOpacity = 1
         view.layer.shadowOffset  = CGSize.zero
         view.layer.shadowRadius  = 3
+        view.clipsToBounds = true
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     lazy var imageCharacters: UIImageView = {
         let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         imageView.layer.cornerRadius  = 10
         imageView.backgroundColor     = UIColor.orange
         imageView.layer.shadowColor   = UIColor.black.cgColor
@@ -35,14 +38,18 @@ class HomeTableViewCell: UITableViewCell {
         imageView.layer.shadowOffset  = CGSize.zero
         imageView.layer.shadowRadius  = 3
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        imageView.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
         return imageView
     }()
     
     lazy var nameCharactersLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
+        label.font = UIFont.boldSystemFont(ofSize: 20)
         label.text = "teste personagem marvel"
         label.tintColor = .purple
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -109,9 +116,10 @@ class HomeTableViewCell: UITableViewCell {
         self.nameLabel = UILabel(frame: CGRect(x: width*0.7, y: 0, width: width*0.3, height: height/2))
         self.nameLabel.center.y = height/2
 //
-        self.addSubview(view)
-        self.addSubview(stack)
        
+//        self.addSubview(view)
+//        view.addSubview(stack)
+        self.addSubview(stack)
     }
     
     required init?(coder: NSCoder) {
