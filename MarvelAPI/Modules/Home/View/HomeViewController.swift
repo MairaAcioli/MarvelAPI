@@ -8,79 +8,59 @@
 import UIKit
 
 
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HomeViewController: UIViewController {
     
     weak var presenter: HomeViewToPresenterProtocol?
     var characterModel: CharactersResponseModel? = nil
-//    private var refreshControl: UIRefreshControl?
-    
-    //MARK: - Sets the StatusBar as white
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        
-        return UIStatusBarStyle.lightContent
-    }
         
     var charactersListTableView = UITableView()
     
-//    apenas teste request
-    var repository = CharactersRepository()
+    var charactersSearchBar =  UISearchBar()
+    var filterCharacter: [String] = []
 
-        
+    
     let cell = HomeTableViewCell.init()
-
+    
         
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        repository.getCharacters { [weak self] array in
-//            if array != nil {
-//
-//            }
-//        }
-        
         presenter?.requestFirstCallOfCharacters()
-        
-        configurator()
         
         setupNavigationBar()
         setupConstraints()
+        setupSearchBar()
+        setupDelegate()
         
         self.view.addSubview(charactersListTableView)
         
+        self.charactersListTableView.register(HomeTableViewCell.self, forCellReuseIdentifier: "HomeTableViewCell")
+        self.charactersListTableView.separatorStyle = .none
+        self.charactersListTableView.backgroundColor = .white
+        self.charactersListTableView.allowsSelection = false
+
+      
+    }
+    
+    
+    func setupDelegate(){
+        
+        self.charactersSearchBar.delegate = self
+        
         self.charactersListTableView.delegate = self
         self.charactersListTableView.dataSource = self
-        self.charactersListTableView.register(HomeTableViewCell.self, forCellReuseIdentifier: "HomeTableViewCell")
-     
+        
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-    }
-    
-//    func presentCharacters(model: [CharactersResponseModel])  {
-//        self.characterModel = model
-//    }
-    
-    
-    func configurator() {
-//
-//        let viewController = HomeViewController()
-//        let presenter: HomeViewToPresenterProtocol & HomeInteractorToPresenterProtocol = HomePresenter()
-//
-//        viewController.presenter = presenter
-//        viewController.presenter?.router = HomeRouter()
-//        viewController.presenter?.view = viewController
-//        viewController.presenter?.interactor = HomeInteractor()
-//        viewController.presenter?.interactor?.presenter = presenter
-//        let presenter = HomePresenter()
-//        let viewController = HomeViewController(presenter: presenter)
-//        _ = HomeInteractor(presenter: presenter, repository: CharactersRepository())
-//        viewController.presenter = presenter
-    }
     
     func setupConstraints() {
-        charactersListTableView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+        
+        self.charactersListTableView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+        self.charactersSearchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: charactersListTableView.frame.size.width, height: 44.0))
+        
+        self.charactersListTableView.tableHeaderView = charactersSearchBar
+        
+        
     }
     
     
@@ -93,20 +73,39 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func setupSearchBar() {
+        
+        charactersSearchBar.barTintColor = .systemYellow
+        charactersSearchBar.tintColor = .systemPink
+        charactersSearchBar.showsCancelButton = true
+        charactersSearchBar.placeholder = "search Character"
+       
+        
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+}
 
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        return characterModel?.data?.results?.count ?? 0
-        return 18
+        return 19
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: indexPath) as! HomeTableViewCell
+        
         cell.imageCharacters.image = UIImage(named: "marvelTestImage")
-        
+
         cell.nameCharactersLabel.text = characterModel?.data?.results?[indexPath.row].name
-        
+    
 //        cell.nameLabel.text =
 //        for i in characterModel {
 //            cell.update(model: i)
@@ -118,32 +117,68 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return self.view.frame.height*0.2
+        return cell.view.frame.height + 32
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
     
 }
 
+extension HomeViewController: UISearchBarDelegate {
+    
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        var arrayName = [String]()
+        guard let arrayNamesCharacters = characterModel?.data?.results else {return}
+
+        for value in arrayNamesCharacters {
+            arrayName.append(value.name ?? "")
+        }
+        
+     
+        self.filterCharacter = []
+        
+        if searchText.isEmpty {
+            self.filterCharacter = arrayName
+        }else{
+            
+            for name in arrayName {
+                if ((name.uppercased().contains(searchText.uppercased()))){
+                    self.filterCharacter.append(name)
+                }
+            }
+        }
+        
+        self.charactersListTableView.reloadData()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+    
+    
+    
+}
+//}
+
 extension HomeViewController: HomePresenterToViewProtocol {
     
-   
+    
     
     func showCharacterResults(model: CharactersResponseModel) {
         self.characterModel = model
     }
     
     
-//    func problemOnFetchingData(error: errorTypes) {
-//
-//        ///Show Alert with problem
-//
-//    }
+    //    func problemOnFetchingData(error: errorTypes) {
+    //
+    //        ///Show Alert with problem
+    //
+    //    }
     
 }
+

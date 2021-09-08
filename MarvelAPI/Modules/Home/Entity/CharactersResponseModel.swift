@@ -74,16 +74,16 @@ class DataClassModel {
      }
  }
 
- //class ThumbnailModel {
- //
- //    var path: String?
- //    var thumbnailExtension: Extension?
- //
- //    init(path: String?, thumbnailExtension: Extension?) {
- //        self.path = path
- //        self.thumbnailExtension = thumbnailExtension
- //    }
- //}
+ class ThumbnailModel {
+ 
+     var path: String?
+     var thumbnailExtension: Extension?
+ 
+     init(path: String?, thumbnailExtension: Extension?) {
+         self.path = path
+         self.thumbnailExtension = thumbnailExtension
+     }
+ }
 
  //    var id: Int
  //    var name: String

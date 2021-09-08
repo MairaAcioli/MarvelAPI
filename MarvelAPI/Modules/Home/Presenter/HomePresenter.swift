@@ -21,8 +21,8 @@ class HomePresenter: HomeViewToPresenterProtocol {
     
     func requestFirstCallOfCharacters() {
         
-        var array = charactersModel.data?.results
-        array?.removeAll()
+//        var array = charactersModel.data?.results
+//        array?.removeAll()
         
         interactor?.fetchCharacters()
         
