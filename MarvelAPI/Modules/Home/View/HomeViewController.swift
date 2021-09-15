@@ -38,8 +38,8 @@ class HomeViewController: UIViewController {
         self.charactersListTableView.separatorStyle = .none
         self.charactersListTableView.backgroundColor = .white
         self.charactersListTableView.allowsSelection = false
+        self.charactersListTableView.showsVerticalScrollIndicator = false
 
-      
     }
     
     
@@ -49,6 +49,7 @@ class HomeViewController: UIViewController {
         
         self.charactersListTableView.delegate = self
         self.charactersListTableView.dataSource = self
+
         
     }
     
@@ -56,10 +57,20 @@ class HomeViewController: UIViewController {
     func setupConstraints() {
         
         self.charactersListTableView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+        
         self.charactersSearchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: charactersListTableView.frame.size.width, height: 44.0))
         
         self.charactersListTableView.tableHeaderView = charactersSearchBar
         
+        
+//        NSLayoutConstraint.activate ([
+//            charactersListTableView.topAnchor.constraint(equalTo: view.topAnchor),
+//            charactersListTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+//            charactersListTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+//            charactersListTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+//            charactersListTableView.widthAnchor.constraint(equalTo: view.widthAnchor),
+//            charactersListTableView.heightAnchor.constraint(equalTo: view.heightAnchor)
+//        ])
         
     }
     
@@ -78,6 +89,7 @@ class HomeViewController: UIViewController {
         charactersSearchBar.barTintColor = .systemYellow
         charactersSearchBar.tintColor = .systemPink
         charactersSearchBar.showsCancelButton = true
+//        charactersSearchBar.
         charactersSearchBar.placeholder = "search Character"
        
         
@@ -118,6 +130,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         return cell.view.frame.height + 32
+        
+//        return UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

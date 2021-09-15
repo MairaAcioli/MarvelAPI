@@ -6,29 +6,6 @@
 //
 
 import UIKit
-//
-//
-//public class HomeRouter: HomePresenterToRouterProtocol {
-//    
-//    static func createModule(as presentationStyle: UIModalPresentationStyle) -> UIViewController {
-//        
-//        let presenter: HomeViewToPresenterProtocol & HomeInteractorToPresenterProtocol = HomePresenter()
-//        let vc = HomeViewController(presenter: presenter)
-//        
-//        vc.modalPresentationStyle = presentationStyle
-//        
-//        return vc
-//        
-//    }
-//    
-//    
-//    
-//  
-//    
-//}
-//
-//
-//
 
 public class HomeRouter: HomePresenterToRouterProtocol {
     

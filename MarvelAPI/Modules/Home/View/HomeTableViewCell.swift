@@ -12,8 +12,9 @@ class HomeTableViewCell: UITableViewCell {
     
     lazy var view: UIView = {
         let view = UIView(frame: CGRect(x: contentView.center.x/2, y: 16, width: 200, height: 280))
+//        let view = UIView()
         view.layer.cornerRadius  = 10
-        view.backgroundColor     = UIColor.systemPink
+        view.backgroundColor     = UIColor.systemBlue
         view.layer.shadowColor   = UIColor.black.cgColor
         view.layer.shadowOpacity = 1
         view.layer.shadowOffset  = CGSize.zero
@@ -32,7 +33,6 @@ class HomeTableViewCell: UITableViewCell {
         imageView.layer.shadowOffset  = CGSize.zero
         imageView.layer.shadowRadius  = 3
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
         return imageView
     }()
     
@@ -41,22 +41,33 @@ class HomeTableViewCell: UITableViewCell {
         label.font = UIFont.boldSystemFont(ofSize: 18)
         label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.frame = CGRect(x: 8, y: 190, width: 184, height: 80)
         label.numberOfLines = 0
         return label
     }()
     
-   
-
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-        addSubview(view)
+        contentView.addSubview(view)
         view.addSubview(imageCharacters)
         view.addSubview(nameCharactersLabel)
         
         NSLayoutConstraint.activate([
-        
+            
+            view.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
+            view.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 40),
+            view.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -40),
+            view.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20),
+            
+            imageCharacters.topAnchor.constraint(equalTo: view.topAnchor),
+            imageCharacters.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -60),
+            imageCharacters.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            imageCharacters.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            
+            nameCharactersLabel.topAnchor.constraint(equalTo: imageCharacters.bottomAnchor, constant: 16),
+            nameCharactersLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -16),
+            nameCharactersLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            
             ])
     }
     
