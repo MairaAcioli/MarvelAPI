@@ -7,7 +7,7 @@
 
 import Foundation
 
- class CharactersResponseModel {
+class CharactersResponseModel {
 
      var code: Int?
      var status, copyright, attributionText, attributionHTML: String?
@@ -27,13 +27,13 @@ import Foundation
  }
 
 class DataClassModel {
-   
+
     var offset: Int?
     var limit: Int?
     var total: Int?
     var count: Int?
     var results: [ResultCharacters]?
-    
+
     init(response: DataClass) {
         self.offset = response.offset
         self.limit = response.limit
@@ -56,7 +56,7 @@ class DataClassModel {
      var events: Comics?
      var urls: [URLElement]?
 
-     init(response: ResultCharacters? = nil) {
+    public init(response: ResultCharacters? = nil) {
          self.id = response?.id
          self.name = response?.name
          self.resultDescription = response?.resultDescription
@@ -72,21 +72,42 @@ class DataClassModel {
          self.urls = response?.urls
 
      }
+    
+//    func getLink(to type: MarvelUrlType) -> MarvelUrl? {
+//        return urls.filter { (url) -> Bool in
+//            return url.type == type
+//        }.first ?? nil
+//        
  }
 
- class ThumbnailModel {
- 
-     var path: String?
-     var thumbnailExtension: Extension?
- 
-     init(path: String?, thumbnailExtension: Extension?) {
-         self.path = path
-         self.thumbnailExtension = thumbnailExtension
-     }
- }
-
- //    var id: Int
- //    var name: String
- //    var description: String
- //    var thumbnail: [String:String]
- //    var urls: [[String:String]]
+//enum MarvelUrlType: String, Codable {
+//    case detail = "detail"
+//    case comiclink = "comiclink"
+//    case wiki = "wiki"
+//}
+//
+//struct MarvelUrl: Codable {
+//    var type: MarvelUrlType
+//    var url: String
+//}
+//
+//
+//class ThumbnailModel {
+//
+//    var path: String?
+//    var thumbnailExtension: Extension?
+//
+//    init(response: Thumbnail? = nil) {
+//        self.path = response?.path
+//        self.thumbnailExtension = response?.thumbnailExtension
+//
+//        enum Extension: String, Codable {
+//            case gif = "gif"
+//            case jpg = "jpg"
+//        }
+//    }
+//
+//    func urlPath(type: ThumbnailType)-> String {
+//        return "\(String(describing: path))/\(type.rawValue).\(Extension.jpg)"
+//    }
+//}

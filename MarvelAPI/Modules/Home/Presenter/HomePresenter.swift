@@ -6,34 +6,45 @@
 //
 
 import Foundation
+import ObjectMapper
 
 
-class HomePresenter: HomeViewToPresenterProtocol {
+class HomePresenter: HomePresentationLogic {
     
     ///Layer instances
-    var view: HomePresenterToViewProtocol?
-    var interactor: HomePresenterToInteractorProtocol?
-    var router: HomePresenterToRouterProtocol?
+    var viewController: HomeDisplayLogic?
     
-    ///Local Data Arrays
-    private var charactersModel = CharactersResponseModel()
-    
-    
-    func requestFirstCallOfCharacters() {
-        
-//        var array = charactersModel.data?.results
-//        array?.removeAll()
-        
-        interactor?.fetchCharacters()
-        
+    init(viewController: HomeDisplayLogic) {
+        self.viewController = viewController
     }
     
-}
-
-extension HomePresenter: HomeInteractorToPresenterProtocol {
+//    func requestFirstCallOfCharacters() {
+//
+//        interactor?.fetchCharacters()
+//
+//    }
+    
     
     func returnCharacterResult(model: CharactersResponseModel) {
-        view?.showCharacterResults(model: model)
+        
+        let results = model.data?.results.map({(modelResult) -> [CharactersDetailViewModel] in
+         
+            var characterDetailViewModel: [CharactersDetailViewModel] = []
+            
+            for item in modelResult {
+                
+                var model = CharactersDetailViewModel(name: item.name, description: item.resultDescription, url: item.thumbnail?.urlPath(type: .landscapeLarge))
+                characterDetailViewModel.append(model)
+            }
+            
+            return characterDetailViewModel
+          
+        })
+    
+        guard let characterResults = results else {
+            return
+        }
+        viewController?.showCharacterResults(model: characterResults)
     }
     
 //    func problemOnFetchingData(error: errorTypes) {

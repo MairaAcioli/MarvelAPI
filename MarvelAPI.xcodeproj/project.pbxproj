@@ -27,6 +27,9 @@
 		9D548EEC26E7892100407219 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D548EEB26E7892100407219 /* HomeViewController.swift */; };
 		9D548EF126E7897500407219 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D548EF026E7897500407219 /* HomeTableViewCell.swift */; };
 		9D548EF926E78A6800407219 /* HomeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D548EF826E78A6800407219 /* HomeProtocols.swift */; };
+		9DDB031B26F4F6F2001571FE /* ThumbnailType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDB031A26F4F6F2001571FE /* ThumbnailType.swift */; };
+		9DDB032026F4F882001571FE /* CharactersDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDB031F26F4F882001571FE /* CharactersDetailViewModel.swift */; };
+		9DDB032526F64683001571FE /* DownloadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDB032426F64683001571FE /* DownloadImage.swift */; };
 		B0060EA79DF63C03D73A47AD /* Pods_MarvelAPITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C96DC7880B180713FB283E1 /* Pods_MarvelAPITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +81,9 @@
 		9D548EEB26E7892100407219 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9D548EF026E7897500407219 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		9D548EF826E78A6800407219 /* HomeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocols.swift; sourceTree = "<group>"; };
+		9DDB031A26F4F6F2001571FE /* ThumbnailType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailType.swift; sourceTree = "<group>"; };
+		9DDB031F26F4F882001571FE /* CharactersDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersDetailViewModel.swift; sourceTree = "<group>"; };
+		9DDB032426F64683001571FE /* DownloadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadImage.swift; sourceTree = "<group>"; };
 		B50306E1E97ED65D97D761E3 /* Pods-MarvelAPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelAPI.debug.xcconfig"; path = "Target Support Files/Pods-MarvelAPI/Pods-MarvelAPI.debug.xcconfig"; sourceTree = "<group>"; };
 		F7AFAC6A4285F3E3EDCAC4CD /* Pods-MarvelAPITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelAPITests.debug.xcconfig"; path = "Target Support Files/Pods-MarvelAPITests/Pods-MarvelAPITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FB44A4DF9060C3177034FFAC /* Pods-MarvelAPITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelAPITests.release.xcconfig"; path = "Target Support Files/Pods-MarvelAPITests/Pods-MarvelAPITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -210,6 +216,9 @@
 			isa = PBXGroup;
 			children = (
 				9D548EE126E787DC00407219 /* CharactersResponseModel.swift */,
+				9DDB031A26F4F6F2001571FE /* ThumbnailType.swift */,
+				9DDB031F26F4F882001571FE /* CharactersDetailViewModel.swift */,
+				9DDB032426F64683001571FE /* DownloadImage.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -526,11 +535,14 @@
 			files = (
 				9D548E8726E52C5D00407219 /* HomeRouter.swift in Sources */,
 				9D548ECF26E786B900407219 /* CharactersRequest.swift in Sources */,
+				9DDB031B26F4F6F2001571FE /* ThumbnailType.swift in Sources */,
 				9D548E1126E2A55E00407219 /* ViewController.swift in Sources */,
+				9DDB032026F4F882001571FE /* CharactersDetailViewModel.swift in Sources */,
 				9D548EEC26E7892100407219 /* HomeViewController.swift in Sources */,
 				9D548EE226E787DC00407219 /* CharactersResponseModel.swift in Sources */,
 				9D548E0D26E2A55E00407219 /* AppDelegate.swift in Sources */,
 				9D548EF926E78A6800407219 /* HomeProtocols.swift in Sources */,
+				9DDB032526F64683001571FE /* DownloadImage.swift in Sources */,
 				9D548EE726E788DF00407219 /* HomePresenter.swift in Sources */,
 				9D548EDD26E7879100407219 /* HomeInteractor.swift in Sources */,
 				9D548ED526E786F700407219 /* CharactersResponse.swift in Sources */,

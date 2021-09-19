@@ -96,7 +96,7 @@ class Comics: Mappable {
         available <- map["available"]
         collectionURI <- map["collectionURI"]
         items <- map["items"]
-        returned <- map["items"]
+        returned <- map["returned"]
         
     }
 }
@@ -132,12 +132,7 @@ public enum ItemType: String, Codable {
 class Thumbnail: Mappable {
 
     var path: String?
-    var thumbnailExtension: Extension?
-
-    enum CodingKeys: String, CodingKey {
-        case path
-        case thumbnailExtension = "extension"
-    }
+    var thumbnailExtension: String?
     
     required init?(map: Map) {
         
@@ -145,16 +140,18 @@ class Thumbnail: Mappable {
     
     func mapping(map: Map) {
         path <- map["path"]
-        thumbnailExtension <- map["thumbnailExtension"]
+        thumbnailExtension <- map["extension"]
+    }
+    
+    func urlPath(type: ThumbnailType)-> String {
+//        return "\(path))/\(type.rawValue).\(thumbnailExtension))"
+        guard let path = self.path, let thumbnail = self.thumbnailExtension else {
+            return ""
+        }
+        return path + type.rawValue + "." + thumbnail
     }
 }
-    
-    
-
-public enum Extension: String, Codable {
-    case gif = "gif"
-    case jpg = "jpg"
-}
+ 
 
 // MARK: - URLElement
 public struct URLElement: Codable {
@@ -167,3 +164,4 @@ public enum URLType: String, Codable {
     case detail = "detail"
     case wiki = "wiki"
 }
+

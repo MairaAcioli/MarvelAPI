@@ -75,6 +75,18 @@ class HomeTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
+    func apply(with urlString: String) {
+        
+        var previousUrlString: String?
+        
+            ImageDownloader.shared.downloadImage(with: urlString, completionHandler: { (image, cached) in
+               
+//                if caching || (urlString == self.previousUrlString) {
+                self.imageCharacters.image = image
+//                }
 
+            }, placeholderImage: UIImage(named: "marvelTestImage"))
+            
+            previousUrlString = urlString
+}
 }

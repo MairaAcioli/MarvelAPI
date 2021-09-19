@@ -7,10 +7,13 @@
 
 import Foundation
 
-class HomeInteractor: HomePresenterToInteractorProtocol {
+class HomeInteractor: HomeBusinessProtocol {
     
+    var presenter: HomePresentationLogic?
     
-    var presenter: HomeInteractorToPresenterProtocol?
+    init(presenter: HomePresentationLogic){
+        self.presenter = presenter
+    }
     
     func fetchCharacters() {
         
