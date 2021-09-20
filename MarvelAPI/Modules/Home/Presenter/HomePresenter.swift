@@ -33,7 +33,7 @@ class HomePresenter: HomePresentationLogic {
             
             for item in modelResult {
                 
-                var model = CharactersDetailViewModel(name: item.name, description: item.resultDescription, url: item.thumbnail?.urlPath(type: .landscapeLarge))
+                let model = CharactersDetailViewModel(name: item.name, description: item.resultDescription, url: item.thumbnail?.urlPath(type: .landscapeLarge))
                 characterDetailViewModel.append(model)
             }
             

@@ -12,7 +12,6 @@ class HomeTableViewCell: UITableViewCell {
     
     lazy var view: UIView = {
         let view = UIView(frame: CGRect(x: contentView.center.x/2, y: 16, width: 200, height: 280))
-//        let view = UIView()
         view.layer.cornerRadius  = 10
         view.backgroundColor     = UIColor.systemBlue
         view.layer.shadowColor   = UIColor.black.cgColor
@@ -75,27 +74,16 @@ class HomeTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func apply(with urlString: String) {
-        
-        guard let url = URL(string: "http://i.annihil.us/u/prod/marvel/i/mg/9/90/4ce5a862a6c48/portrait_medium.jpg") else { return }
-        UIImage.loadFrom(url: url) { image in
-            self.imageCharacters.image = image
+   public func setupCell(model: CharactersDetailViewModel) {
+        self.nameCharactersLabel.text = model.name
+        if let url = URL(string: model.url ?? "") {
+            UIImage.loadFrom(url: url) { (response) in
+                self.imageCharacters.image = response
+            }
+        } else {
+            self.imageCharacters.image = UIImage(named: "noImage.png")
         }
-        
-        var previousUrlString: String?
-        
-        ImageDownloader.shared.downloadImage(with: "http://i.annihil.us/u/prod/marvel/i/mg/9/90/4ce5a862a6c48/portrait_medium.jpg" , completionHandler: { (image, cached) in
-            
-            //                if caching || (urlString == self.previousUrlString) {
-            self.imageCharacters.image = image
-            //                }
-            
-        }, placeholderImage: UIImage(named: "marvelTestImage"))
-        
-        previousUrlString = urlString
     }
-    
-   
 }
 
 extension UIImage {
