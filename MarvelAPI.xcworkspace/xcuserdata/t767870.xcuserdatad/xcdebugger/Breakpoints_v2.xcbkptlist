@@ -151,52 +151,36 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F7DF7823-4BBD-41DA-93AE-30220FC7AB22"
+            uuid = "C714745A-3EEA-4F78-8D33-1639647E28A2"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarvelAPI/Modules/Home/Entity/CharactersDetailViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "returnImage()"
-            landmarkType = "7">
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "CharactersDetailViewModel"
+            landmarkType = "14">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A2A1DDDE-9094-49DD-A82A-D4A7C2B01664"
+            uuid = "3695B7C9-7749-4396-B164-C53D98122918"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarvelAPI/Modules/Home/Entity/CharactersDetailViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "returnImage()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E96E4FEE-C901-405F-B153-3A9D970F2481"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MarvelAPI/Modules/Home/Entity/CharactersDetailViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
             landmarkName = "returnImage()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "E96E4FEE-C901-405F-B153-3A9D970F2481 - 525232198977526b"
+                  uuid = "3695B7C9-7749-4396-B164-C53D98122918 - 52523219897752d7"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -206,12 +190,12 @@
                   urlString = "file:///Users/t767870/Desktop/MarvelAPI/MarvelAPI/Modules/Home/Entity/CharactersDetailViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30"
-                  offsetFromSymbolStart = "182">
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "29">
                </Location>
                <Location
-                  uuid = "E96E4FEE-C901-405F-B153-3A9D970F2481 - f81cc862c76b4c11"
+                  uuid = "3695B7C9-7749-4396-B164-C53D98122918 - f81cc862c76b4cd3"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -221,9 +205,9 @@
                   urlString = "file:///Users/t767870/Desktop/MarvelAPI/MarvelAPI/Modules/Home/Entity/CharactersDetailViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30"
-                  offsetFromSymbolStart = "219">
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "118">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -231,20 +215,36 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B2D51EA1-6E5F-419B-9258-FB706A3ADF60"
+            uuid = "01E82BAD-1B00-411F-B394-1D363C81FA22"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarvelAPI/Modules/Home/View/HomeTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "apply(with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A83EA04A-6534-4F5B-A233-98AC83B1EA05"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MarvelAPI/Modules/Home/View/HomeTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
             landmarkName = "apply(with:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "B2D51EA1-6E5F-419B-9258-FB706A3ADF60 - 9a4dbcafb95cbb8e"
+                  uuid = "A83EA04A-6534-4F5B-A233-98AC83B1EA05 - 9a4dbcafb95cbaa1"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -254,24 +254,24 @@
                   urlString = "file:///Users/t767870/Desktop/MarvelAPI/MarvelAPI/Modules/Home/View/HomeTableViewCell.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "88"
-                  endingLineNumber = "88"
-                  offsetFromSymbolStart = "190">
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "313">
                </Location>
                <Location
-                  uuid = "B2D51EA1-6E5F-419B-9258-FB706A3ADF60 - 8b5a0794cbc854b5"
+                  uuid = "A83EA04A-6534-4F5B-A233-98AC83B1EA05 - 53da49dba359735f"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.UIImage&gt;, Swift.Bool) -&gt; () in MarvelAPI.HomeTableViewCell.apply(with: Swift.String) -&gt; ()"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.UIImage&gt;) -&gt; () in MarvelAPI.HomeTableViewCell.apply(with: Swift.String) -&gt; ()"
                   moduleName = "MarvelAPI"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/t767870/Desktop/MarvelAPI/MarvelAPI/Modules/Home/View/HomeTableViewCell.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "88"
-                  endingLineNumber = "88"
-                  offsetFromSymbolStart = "101">
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "34">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -279,129 +279,241 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D3B998BD-3AAE-4DD2-B393-547F93A1F087"
+            uuid = "248BC531-D9D0-4FBD-8577-2CF027DFB6D3"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarvelAPI/Modules/Home/View/HomeTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "apply(with:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "746EDC3F-7CE4-48FB-8ADF-0AFD15E44475"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MarvelAPI/Modules/Home/View/HomeViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "133"
-            endingLineNumber = "133"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C46DD53A-FCE2-4B71-93C4-679070CA1F51"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MarvelAPI/Modules/Home/Entity/DownloadImage.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
-            landmarkName = "downloadImage(with:completionHandler:placeholderImage:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "ECD6B23F-BFD8-4827-A0DD-3B153793FF48"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MarvelAPI/Modules/Home/Entity/DownloadImage.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "downloadImage(with:completionHandler:placeholderImage:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7FABD58A-3C6A-4EA7-B2AB-F3DF79714246"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MarvelAPI/Modules/Home/Entity/DownloadImage.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
-            landmarkName = "getDataTaskFrom(urlString:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "0448E280-92E1-4C3D-9811-F9CBC240908E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MarvelAPI/Modules/Home/Entity/DownloadImage.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "12"
-            endingLineNumber = "12"
-            landmarkName = "ImageDownloader"
-            landmarkType = "3">
             <Locations>
                <Location
-                  uuid = "0448E280-92E1-4C3D-9811-F9CBC240908E - e8c103d8e22a8a00"
+                  uuid = "248BC531-D9D0-4FBD-8577-2CF027DFB6D3 - 9a4dbcafb95cbbef"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "globalinit_33_55D60970F164D5AFC39AB4C13FB7D151_func0"
+                  symbolName = "MarvelAPI.HomeTableViewCell.apply(with: Swift.String) -&gt; ()"
                   moduleName = "MarvelAPI"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/t767870/Desktop/MarvelAPI/MarvelAPI/Modules/Home/Entity/DownloadImage.swift"
+                  urlString = "file:///Users/t767870/Desktop/MarvelAPI/MarvelAPI/Modules/Home/View/HomeTableViewCell.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "12"
-                  endingLineNumber = "12"
-                  offsetFromSymbolStart = "11">
+                  startingLineNumber = "87"
+                  endingLineNumber = "87"
+                  offsetFromSymbolStart = "456">
                </Location>
                <Location
-                  uuid = "0448E280-92E1-4C3D-9811-F9CBC240908E - f6f534b39753cea1"
+                  uuid = "248BC531-D9D0-4FBD-8577-2CF027DFB6D3 - 95c80e2fe00ea72"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "MarvelAPI.ImageDownloader.shared.unsafeMutableAddressor : MarvelAPI.ImageDownloader"
+                  symbolName = "closure #2 (Swift.Optional&lt;__C.UIImage&gt;, Swift.Bool) -&gt; () in MarvelAPI.HomeTableViewCell.apply(with: Swift.String) -&gt; ()"
+                  moduleName = "MarvelAPI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/t767870/Desktop/MarvelAPI/MarvelAPI/Modules/Home/View/HomeTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "46">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CEC6CACF-BFFE-4806-9A93-CACEF9B812A4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MarvelAPI/Modules/Home/View/HomeTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "loadFrom(url:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CEC6CACF-BFFE-4806-9A93-CACEF9B812A4 - 950978ab00d00fb8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static (extension in MarvelAPI):__C.UIImage.loadFrom(url: Foundation.URL, completion: (Swift.Optional&lt;__C.UIImage&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "MarvelAPI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/t767870/Desktop/MarvelAPI/MarvelAPI/Modules/Home/View/HomeTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
+                  offsetFromSymbolStart = "362">
+               </Location>
+               <Location
+                  uuid = "CEC6CACF-BFFE-4806-9A93-CACEF9B812A4 - dead2f2e28591e36"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in static (extension in MarvelAPI):__C.UIImage.loadFrom(url: Foundation.URL, completion: (Swift.Optional&lt;__C.UIImage&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "MarvelAPI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/t767870/Desktop/MarvelAPI/MarvelAPI/Modules/Home/View/HomeTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "104"
+                  endingLineNumber = "104"
+                  offsetFromSymbolStart = "239">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A73BEAFA-DF16-4520-91E6-4B2B2CB5D40C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MarvelAPI/Modules/Home/View/HomeTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "loadFrom(url:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "29951A57-5FD4-4F87-ACEF-4885D59BF8D9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MarvelAPI/Modules/Home/View/HomeTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "loadFrom(url:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3496507C-79F6-4F01-A540-219D1AFD23F9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MarvelAPI/Modules/Home/Entity/DownloadImage.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "downloadImage(with:completionHandler:placeholderImage:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AD58F3A4-7220-417F-BAE1-EF1804FE0081"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MarvelAPI/Modules/Home/Entity/DownloadImage.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "downloadImage(with:completionHandler:placeholderImage:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "01B1816E-8BFE-447C-810F-14A1BEF2AB55"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MarvelAPI/Modules/Home/Entity/DownloadImage.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "downloadImage(with:completionHandler:placeholderImage:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "14C4C855-F453-411C-ABCE-4EB0A75B4F5B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MarvelAPI/Modules/Home/Entity/DownloadImage.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "downloadImage(with:completionHandler:placeholderImage:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "14C4C855-F453-411C-ABCE-4EB0A75B4F5B - e503520201e988dc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MarvelAPI.ImageDownloader.downloadImage(with: Swift.Optional&lt;Swift.String&gt;, completionHandler: (Swift.Optional&lt;__C.UIImage&gt;, Swift.Bool) -&gt; (), placeholderImage: Swift.Optional&lt;__C.UIImage&gt;) -&gt; ()"
                   moduleName = "MarvelAPI"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/t767870/Desktop/MarvelAPI/MarvelAPI/Modules/Home/Entity/DownloadImage.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "12"
-                  endingLineNumber = "12"
-                  offsetFromSymbolStart = "4">
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "942">
+               </Location>
+               <Location
+                  uuid = "14C4C855-F453-411C-ABCE-4EB0A75B4F5B - bc12964ca7dfed60"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MarvelAPI.ImageDownloader.downloadImage(with: Swift.Optional&lt;Swift.String&gt;, completionHandler: (Swift.Optional&lt;__C.UIImage&gt;, Swift.Bool) -&gt; (), placeholderImage: Swift.Optional&lt;__C.UIImage&gt;) -&gt; ()"
+                  moduleName = "MarvelAPI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/t767870/Desktop/MarvelAPI/MarvelAPI/Modules/Home/Entity/DownloadImage.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "440">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E82AD5EC-A285-47B5-8928-A5FA54B8ECEE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MarvelAPI/Modules/Home/Entity/DownloadImage.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "downloadImage(with:completionHandler:placeholderImage:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

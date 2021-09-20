@@ -77,16 +77,39 @@ class HomeTableViewCell: UITableViewCell {
     
     func apply(with urlString: String) {
         
+        guard let url = URL(string: "http://i.annihil.us/u/prod/marvel/i/mg/9/90/4ce5a862a6c48/portrait_medium.jpg") else { return }
+        UIImage.loadFrom(url: url) { image in
+            self.imageCharacters.image = image
+        }
+        
         var previousUrlString: String?
         
-            ImageDownloader.shared.downloadImage(with: urlString, completionHandler: { (image, cached) in
-               
-//                if caching || (urlString == self.previousUrlString) {
-                self.imageCharacters.image = image
-//                }
-
-            }, placeholderImage: UIImage(named: "marvelTestImage"))
+        ImageDownloader.shared.downloadImage(with: "http://i.annihil.us/u/prod/marvel/i/mg/9/90/4ce5a862a6c48/portrait_medium.jpg" , completionHandler: { (image, cached) in
             
-            previousUrlString = urlString
+            //                if caching || (urlString == self.previousUrlString) {
+            self.imageCharacters.image = image
+            //                }
+            
+        }, placeholderImage: UIImage(named: "marvelTestImage"))
+        
+        previousUrlString = urlString
+    }
+    
+   
 }
+
+extension UIImage {
+    public static func loadFrom(url: URL, completion: @escaping (_ image: UIImage?) -> ()) {
+        DispatchQueue.global().async {
+            if let data = try? Data(contentsOf: url) {
+                DispatchQueue.main.async {
+                    completion(UIImage(data: data))
+                }
+            } else {
+                DispatchQueue.main.async {
+                    completion(nil)
+                }
+            }
+        }
+    }
 }

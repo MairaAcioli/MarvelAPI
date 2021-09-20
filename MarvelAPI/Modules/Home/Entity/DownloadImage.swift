@@ -20,71 +20,87 @@ final class ImageDownloader {
         imagesDownloadTasks = [:]
     }
     
+    // A serial queue to be able to write the non-thread-safe dictionary
+        let serialQueueForImages = DispatchQueue(label: "images.queue", attributes: .concurrent)
+        let serialQueueForDataTasks = DispatchQueue(label: "dataTasks.queue", attributes: .concurrent)
 
+    
+    func getCachedImageFrom(urlString: String) -> UIImage? {
+        // Reading from the dictionary should happen in the thread-safe manner.
+        serialQueueForImages.sync {
+            return cachedImages[urlString]
+        }
+    }
+
+    func getDataTaskFrom(urlString: String) -> URLSessionTask? {
+
+        // Reading from the dictionary should happen in the thread-safe manner.
+        serialQueueForDataTasks.sync {
+            return imagesDownloadTasks[urlString]
+        }
+    }
+    
     func downloadImage(with imageUrlString: String?,
-                       completionHandler: @escaping (UIImage?, Bool) -> Void,
-                       placeholderImage: UIImage?) {
+                      completionHandler: @escaping (UIImage?, Bool) -> Void,
+                      placeholderImage: UIImage?) {
 
-        // Case A.a
-        guard let imageUrlString = imageUrlString else {
-            completionHandler(placeholderImage, true)
-            return
-        }
+       guard let imageUrlString = imageUrlString else {
+           completionHandler(placeholderImage, true)
+           return
+       }
 
-        // Case B.a
-        if let image = getCachedImageFrom(urlString: imageUrlString) {
-            completionHandler(image, true)
-        } else {
-            // Case A.b
-            guard let url = URL(string: imageUrlString) else {
-                completionHandler(placeholderImage, true)
-                return
-            }
+       if let image = getCachedImageFrom(urlString: imageUrlString) {
+           completionHandler(image, true)
+       } else {
+           guard let url = URL(string: imageUrlString) else {
+               completionHandler(placeholderImage, true)
+               return
+           }
 
-            // Case C.a
-            if let _ = getDataTaskFrom(urlString: imageUrlString) {
-                return
-            }
+           if let _ = getDataTaskFrom(urlString: imageUrlString) {
+               return
+           }
 
-            let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+           let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
 
-                guard let data = data else {
-                    return
-                }
+               guard let data = data else {
+                   return
+               }
 
-                // Case A.c
-                if let _ = error {
-                    DispatchQueue.main.async {
-                        completionHandler(placeholderImage, true)
-                    }
-                    return
-                }
+               if let _ = error {
+                   DispatchQueue.main.async {
+                       completionHandler(placeholderImage, true)
+                   }
+                   return
+               }
 
-                let image = UIImage(data: data)
-                
-                self.cachedImages[imageUrlString] = image
-
-                self.imagesDownloadTasks.removeValue(forKey: imageUrlString)
-
-                DispatchQueue.main.async {
-                    // Case D
-                    completionHandler(image, false)
-                }
-            }
+               let image = UIImage(data: data)
             
-            imagesDownloadTasks[imageUrlString] = task
+               // Store the downloaded image in cache
+               self.serialQueueForImages.sync(flags: .barrier) {
+                   self.cachedImages[imageUrlString] = image
+               }
 
-            task.resume()
-        }
-    }
+               // Clear out the finished task from download tasks container
+               _ = self.serialQueueForDataTasks.sync(flags: .barrier) {
+                   self.imagesDownloadTasks.removeValue(forKey: imageUrlString)
+               }
 
+               // Always execute completion handler explicitly on main thread
+               DispatchQueue.main.async {
+                   completionHandler(image, false)
+               }
+           }
+           
+           // We want to control the access to no-thread-safe dictionary in case it's being accessed by multiple threads at once
+           self.serialQueueForDataTasks.sync(flags: .barrier) {
+               imagesDownloadTasks[imageUrlString] = task
+           }
 
-    // MARK: Helper methods
-    private func getCachedImageFrom(urlString: String) -> UIImage? {
-        return cachedImages[urlString]
-    }
+           task.resume()
+       }
+       
 
-    private func getDataTaskFrom(urlString: String) -> URLSessionTask? {
-        return imagesDownloadTasks[urlString]
+       
     }
 }
